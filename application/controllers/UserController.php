@@ -81,6 +81,7 @@ class UserController extends Zend_Controller_Action
     			$userdata = new Application_Model_User();
     			
     			$form->populate($user->find($id, $userdata));
+                        
     		}
     	 }
     	 

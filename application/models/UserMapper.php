@@ -49,15 +49,19 @@ class Application_Model_UserMapper
         if (0 == count($result)) {
             return;
         }
-        $row = $result->current();
-        $user->setIduser($row->iduser);
-        $user->setEmail($row->email);
-        $user->setPassword($row->password);
-        $user->setDisplay_name($row->display_name);
-        $user->setState($row->state);
-        $user->setIdusertype($row->idusertype);
+       
+        $row = $result[0];
         
-        return $row->toArray();
+        $user->setIduser($row['iduser']);
+        $user->setEmail($row['email']);
+        $user->setPassword($row['password']);
+        $user->setDisplay_name($row['display_name']);
+        $user->setState($row['state']);
+        $user->setIdusertype($row['idusertype']);
+        
+        
+       
+        return $row;
     }
    
 
@@ -66,14 +70,17 @@ class Application_Model_UserMapper
         $resultSet = $this->getDbTable()->fetchAll();
         $entries   = array();
         foreach ($resultSet as $row) {
+          /*
             $entry = new Application_Model_User();
             $entry->setIduser($row->iduser);
             $entry->setPassword($row->password);
             $entry ->setEmail($row->email);
             $entry->setDisplay_name($row->display_name);
-        	$entry->setState($row->state);
-        	$entry->setIdusertype($row->idusertype);
-            $entries[] = $entry;
+            $entry->setState($row->state);
+            $entry->setIdusertype($row->idusertype);
+             
+            */ 
+            $entries[] = $row;
         }
         return $entries;
     }
