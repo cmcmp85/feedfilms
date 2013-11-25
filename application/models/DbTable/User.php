@@ -18,7 +18,7 @@ class Application_Model_DbTable_User extends Zend_Db_Table_Abstract
     	return $row;
     	
     }
-    public function find($id)
+   public function find($id)
     {
     	
     	$select =  $this->select()
