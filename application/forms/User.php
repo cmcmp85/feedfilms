@@ -103,7 +103,7 @@ class Application_Form_User extends Zend_Form
 	        		'viewScript' => 'forms/_element_text.phtml'
 	        ))));
         
-        $state = new Zend_Form_Element_Select('state');
+       /* $state = new Zend_Form_Element_Select('state');
         $state->setLabel('State')
         ->setRequired(true)
         ->addValidator('NotEmpty', true)
@@ -114,7 +114,7 @@ class Application_Form_User extends Zend_Form
         ->setDecorators(array(array('ViewScript', array(
 	        		'viewScript' => 'forms/_element_checkbox.phtml'
 	        ))));
-        
+        */
         $idusertype = new Zend_Form_Element_Select('idusertype');
         $idusertype->setLabel('User Type')
         ->setRequired(true)
@@ -123,9 +123,7 @@ class Application_Form_User extends Zend_Form
         ->setAttrib('maxlength', 200)
         ->setAttrib('size', 1)
         ->setOptions(array('class'=>'form-control'))
-	->setDecorators(array(array('ViewScript', array(
-	        		'viewScript' => 'forms/_element_text.phtml'
-	        ))));
+	;
 
         $technology = new Zend_Form_Element_MultiCheckbox('technology');
         $technology->setLabel('Tecnologies:')
@@ -184,7 +182,7 @@ class Application_Form_User extends Zend_Form
 		$submit->setAttrib('id', 'submitbutton');
 		
 		$this->addElements(array($id, 
-                                        $email, $password, $display_name, $state,
+                                        $email, $password, $display_name, 
                                         $description,$nid,$url,
                                         $idusertype, $technology, $gender,
                                         $languages, $city,
