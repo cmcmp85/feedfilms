@@ -5,12 +5,16 @@
         $this->element->getValue(),
         $this->element->getAttribs(),
         $this->element->getMultiOptions(),
-        ' '
+        "&nbsp;\n"
     ))) ?>
-    <? if($this->element->getMessages()):?>
-    <?= $this->formErrors($this->element->getMessages()) ?>
-    <? endif ?>
-    <? if($this->element->getDescription()):?>
-    <div class="hint"><?= $this->element->getDescription() ?></div>
-    <? endif ?>
+    <?php if($this->element->getMessages()):?>
+    <span class="help-block">
+         <?php echo $this->formErrors($this->element->getMessages()) ?>
+    </span>
+    <?php endif ;?>
+    <?php if($this->element->getDescription()):?>
+    <span class="help-inline">
+    <?php echo $this->element->getDescription() ?>
+    </span>
+    <?php endif; ?>
 </div> 
