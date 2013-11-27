@@ -1,11 +1,19 @@
-/.buildpath
-/.project
+.buildpath
+.project
 /.vimproject
 /.zfproject.xml
+<<<<<<< HEAD
 
+=======
+>>>>>>> 686826d2719d30075c70bf3215485fbcca435127
 INSTALL.txt
 README.txt
 demos/
 extras/documentation
+<<<<<<< HEAD
 .idea
 /nbproject/private/
+=======
+.settings
+.idea
+>>>>>>> 686826d2719d30075c70bf3215485fbcca435127
